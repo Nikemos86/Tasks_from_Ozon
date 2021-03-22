@@ -1,5 +1,0 @@
-SELECT DepartmentID, EmployeeID FROM
-(
-	SELECT *, RANK() OVER(PARTITION BY DepartmentID ORDER BY Salary DESC) AS Rank_num FROM Employees
-) AS R
-WHERE Rank_num <= 3;
