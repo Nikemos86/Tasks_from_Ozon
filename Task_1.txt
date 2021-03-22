@@ -1,0 +1,6 @@
+SELECT Da_Bi.EmployeeID, Da_Bi.DepartmentID FROM 
+(
+	SELECT e1.*, e2.DateOfBirth AS DateOfBirth_Director FROM Employees AS e1
+	INNER JOIN Employees AS e2 ON (e1.DepartmentID = e2.DepartmentID AND e2.IsDirector = TRUE)
+) AS Da_Bi
+WHERE DateOfBirth < DateOfBirth_Director AND IsDirector = FALSE
