@@ -1,7 +1,0 @@
-(SELECT * FROM Employees
-EXCEPT
-SELECT * FROM Employees_1)
-UNION
-(SELECT * FROM Employees_1
-EXCEPT
-SELECT * FROM Employees);
